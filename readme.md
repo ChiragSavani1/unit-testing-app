@@ -1,25 +1,43 @@
-# Unit Testing Demo
+## 🚀 Setup
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/ChiragSavani1/unit-testing-app.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run tests:
+   ```bash
+   npm test
+   ```
+4. Start dev server:
+   ```bash
+   npm start
+   ```
 
-This project demonstrates unit testing in JavaScript using Jest.
+## 🔧 Tech Stack
+- Jest (testing)
+- Express (server)
+- HTML/CSS (UI)
 
-## Setup
+## 🧪 Test Coverage
+```bash
+npm test
+```
+Expected output:
+```
+PASS  ./calculator.test.js
+  Calculator
+    ✓ adds 1 + 2 to equal 3 (2ms)
+    ✓ throws division by zero error
+```
 
-1. Clone this repository
-2. Install dependencies: `npm install`
-3. Run tests: `npm test`
+## 🌐 Live Deployment
+Hosted on Render:  
+[https://unit-testing-app.onrender.com](https://unit-testing-app.onrender.com)
 
-## Running the Demo
-
-1. Open `index.html` in a browser to see the calculator UI
-2. Try different operations to see the calculator in action
-
-## Test Cases
-
-The project includes tests for:
-- Basic calculator operations (add, subtract, multiply, divide)
-- Error handling (division by zero, invalid operations)
-- Mocking examples
-
-## Useful VS Code Extensions
-
-- Jest
+## Recommended VS Code Extensions
+- Jest Runner
+- ESLint
+- Live Server
