@@ -23,6 +23,3 @@ The project includes tests for:
 ## Useful VS Code Extensions
 
 - Jest
-- ESLint
-- Prettier - Code formatter
-- Code Runner
