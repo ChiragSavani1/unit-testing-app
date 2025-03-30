@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unit Testing Demo</title>
+  <style>
+    :root {
+  --primary-color: #4361ee;
+  --secondary-color: #3a0ca3;
+  --error-color: #ef233c;
+  --background: #f8f9fa;
+  --text-color: #2b2d42;
+  --light-gray: #e9ecef;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+h2 {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--light-gray);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.calculator {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem 0.25rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  text-align: center;
+  background-color: var(--light-gray);
+}
+
+.error {
+  color: var(--error-color);
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .calculator {
+    padding: 1.5rem;
+  }
+  
+  button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+  </style>
+</head>
+<body>
+  <h1>Calculator Demo</h1>
+  <p>This simple calculator demonstrates the code that's being unit tested.</p>
+  
+  <div class="calculator">
+    <h2>Simple Calculator</h2>
+    <div>
+      <input type="number" id="num1" placeholder="First number">
+      <input type="number" id="num2" placeholder="Second number">
+    </div>
+    <div>
+      <button onclick="calculate('add')">Add</button>
+      <button onclick="calculate('subtract')">Subtract</button>
+      <button onclick="calculate('multiply')">Multiply</button>
+      <button onclick="calculate('divide')">Divide</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script src="calculator.js"></script>
+  <script>
+    function calculate(operation) {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      
+      try {
+        const result = calculator.calculate(operation, num1, num2);
+        document.getElementById('result').textContent = `Result: ${result}`;
+      } catch (error) {
+        document.getElementById('result').textContent = `Error: ${error.message}`;
+      }
+    }
+  </script>
+</body>
+</html>
